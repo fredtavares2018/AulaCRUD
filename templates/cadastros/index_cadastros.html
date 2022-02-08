@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load static %}
+  
+    {% block titulo %}
+    <title>Cadastros</title>
+    {% endblock %}
+
+
+    {% load crispy_forms_tags %}
+    
+        {% block conteudo %}
+
+                {% if object.pk %}
+                <h1 class="h3 mb-4 text-gray-800">Editando Cadastro</h1>
+                {% else %}
+                <h1 class="h3 mb-4 text-gray-800">Cadastros</h1>
+                {% endif %}
+
+                <form method="POST" action="" >
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <div class="text-right">
+
+                        {% if object.pk %}
+                        <button type="submit" class="save btn btn-warning">Salvar Edição</button>
+                        {% else %}
+                        <button type="submit" class="save btn btn-success">Salvar Cadastro</button>
+                        {% endif %}
+
+                    </div>
+                </form>
+
+        {% endblock %}
+               
+

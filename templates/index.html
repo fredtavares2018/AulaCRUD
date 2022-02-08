@@ -1,0 +1,17 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+   
+    {% block titulo %}
+    <title>Teste Index</title>
+    {% endblock %}
+
+
+    {% block conteudo %}
+
+    <h1 class="h3 mb-4 text-gray-800">Index  Testando</h1>
+    Aqui: {{ ip }} - {{ country }} {{ geodata }}
+
+    {% endblock %}

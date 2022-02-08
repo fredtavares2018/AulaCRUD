@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static %}
+ 
+    {% block titulo %}
+    <title>Deletar</title>
+    {% endblock %}
+
+    {% load crispy_forms_tags %}
+    {% block conteudo %}
+
+        <h1 class="h3 mb-4 text-gray-800">Excluir Cadastros</h1>
+        <br>
+        <p>Deseja excluir o cadastro </p>
+        <br> Nome: <b> {{ object.nome }} </b> 
+        <br> Email: <b> {{ object.email }} 
+    
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{ form | crispy }}
+            <div>
+                <button type="submit" class="save btn btn-danger">Confirmo exclusão</button>
+            </div>
+        </form>
+  
+    {% endblock %}
+
+  
