@@ -32,7 +32,7 @@ class ClientesListagem(ListView):
 # pagina editar - U  
 class ClientesUpdate(UpdateView):
     model = Clientes
-    fields = "__all__" 
+    fields = ['nome','email','telefone']  
     template_name = 'cadastros/index_cadastros.html'
     success_url = reverse_lazy('listagem')
 
